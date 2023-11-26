@@ -1,0 +1,64 @@
+{
+  "name": "keewe-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:3003",
+  "dependencies": {
+    "@types/react": "18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "@types/react-router-dom": "^5.3.3",
+    "axios": "^0.27.2",
+    "classnames": "^2.3.2",
+    "formik": "^2.2.9",
+    "lodash": "^4.17.21",
+    "qs": "^6.11.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
+    "react-jss": "^10.9.2",
+    "react-query": "^3.39.2",
+    "react-router-dom": "^6.4.2",
+    "react-scripts": "5.0.1",
+    "react-select": "^5.8.0",
+    "react-toastify": "^9.1.3",
+    "sass": "^1.69.3",
+    "typescript": "^4.8.4",
+    "yup": "^0.32.11"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "paths": {
+    "*.ts": [
+      "*"
+    ],
+    "test": [
+      "src/Theme"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@types/lodash": "^4.14.191",
+    "prettier": "^3.0.3"
+  }
+}
