@@ -16,7 +16,7 @@ const useStyles = createUseStyles<string, {}, any>((theme: Theme) => ({
     borderRight: ` solid 2px ${theme.colors.transparentDarkGray}`,
     borderRadius: theme.borderRadius.std,
     borderBottom: `2px solid ${theme.colors.lightGray}50`,
-    '&:focus-within': {
+    '&:hover': {
       borderBottom: `2px solid ${theme.colors.lightGray}`,
     },
   },
@@ -62,6 +62,7 @@ const useStyles = createUseStyles<string, {}, any>((theme: Theme) => ({
     flex: 1,
     margin: 'auto',
     ...theme.fonts.caption,
+    fontWeight: 500,
     padding: theme.marginBase,
     border: 'none',
     '&:focus + label': {
@@ -99,10 +100,10 @@ const useStyles = createUseStyles<string, {}, any>((theme: Theme) => ({
   },
   label: {
     position: 'absolute',
-    left: '2%',
+    left: theme.marginBase,
     ...theme.fonts.label,
     marginLeft: 0,
-    top: 9,
+    top: 6,
     paddingLeft: theme.marginBase / 2,
     transition: 'all ease-in-out 0.2s',
     pointerEvents: 'none',
@@ -118,7 +119,7 @@ const useStyles = createUseStyles<string, {}, any>((theme: Theme) => ({
   error: {
     ...theme.fonts.caption,
     fontSize: theme.fonts.caption.fontSize - 1,
-    marginLeft: '2%',
+    marginLeft: 4,
     paddingLeft: theme.marginBase / 2,
     paddingTop: theme.marginBase / 2,
     fontWeight: 500,
@@ -159,18 +160,18 @@ const useAutosizeTextArea = (
 };
 
 export const Input = ({
-  title,
-  type = 'text',
-  name,
-  value,
-  maxLength = 100,
-  eye,
-  textarea,
-  className,
-  autoSize,
-  reset,
-  rows = autoSize ? 1 : 3,
-}: Input1Props) => {
+                        title,
+                        type = 'text',
+                        name,
+                        value,
+                        maxLength = 100,
+                        eye,
+                        textarea,
+                        className,
+                        autoSize,
+                        reset,
+                        rows = autoSize ? 1 : 3,
+                      }: Input1Props) => {
   const formik = useFormikContext<any>();
   const [val, setVal] = useState(formik.values[name] || value || '');
   const classes = useStyles({ theme });

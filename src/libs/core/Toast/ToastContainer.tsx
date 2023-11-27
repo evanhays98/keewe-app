@@ -20,15 +20,21 @@ const useStyles = createUseStyles((theme: Theme) => ({
   toast: {
     '&.Toastify__toast-theme--colored.Toastify__toast--info': {
       backgroundColor: 'transparent',
-      background: `-webkit-linear-gradient(20deg, ${'rgba(17,72,112,0.6)'} 0%, ${'rgba(74,105,140,0.6)'} 60%, ${'rgba(49,50,159,0.6)'} 100%)`,
+      background: `-webkit-linear-gradient(0deg, ${'rgb(188,222,227)'}  0%, ${'rgb(188,222,227)'} 100%)`,
       backdropFilter: 'blur(10px)',
-      color: '#f6f3f1',
+      color: '#2d4952',
+      '& .Toastify__close-button': {
+        color: '#2d4952',
+      }
     },
     '&.Toastify__toast-theme--colored.Toastify__toast--success': {
       backgroundColor: 'transparent',
-      background: `-webkit-linear-gradient(180deg, ${'rgba(17,112,75,0.6)'} 0%, ${'rgba(74,140,105,0.6)'} 30%, ${'rgba(13,96,53,0.6)'} 100%)`,
+      background: `-webkit-linear-gradient(0deg, ${'rgba(188,227,195,0.5)'}  0%, ${'rgba(188,227,195,0.5)'} 100%)`,
       backdropFilter: 'blur(10px)',
-      color: '#f6f3f1',
+      color: '#2d5234',
+      '& .Toastify__close-button': {
+        color: '#2d5234',
+      }
     },
     '&.Toastify__toast-theme--colored.Toastify__toast--warning': {
       backgroundColor: 'transparent',
@@ -45,11 +51,11 @@ const useStyles = createUseStyles((theme: Theme) => ({
   },
   progress: {
     '&.Toastify__progress-bar-theme--colored.Toastify__progress-bar--info': {
-      backgroundColor: 'rgba(117,172,201,0.5)',
+      backgroundColor: '#2d4952',
       backdropFilter: 'blur(10px)',
     },
     '&.Toastify__progress-bar-theme--colored.Toastify__progress-bar--success': {
-      backgroundColor: 'rgba(117,201,168,0.5)',
+      backgroundColor: '#2d5234',
       backdropFilter: 'blur(10px)',
     },
     '&.Toastify__progress-bar-theme--colored.Toastify__progress-bar--warning': {
@@ -72,7 +78,7 @@ export const ToastContainer = () => {
       toastClassName={classes.toast}
       progressClassName={classes.progress}
       position='top-right'
-      autoClose={5000}
+      autoClose={10000}
       hideProgressBar={false}
       newestOnTop={false}
       closeOnClick

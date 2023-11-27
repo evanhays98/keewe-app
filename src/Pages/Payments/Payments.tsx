@@ -1,15 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { createUseStyles } from 'react-jss';
 import { Theme, theme } from 'src/libs/theme';
-import {
-  Button,
-  Formix,
-  FormixError,
-  Input,
-  PageHeader,
-  SelectFormik,
-  useToast,
-} from '../../libs/core';
+import { Button, Formix, FormixError, Input, PageHeader, SelectFormik, useToast } from '../../libs/core';
 import * as Yup from 'yup';
 import { useCreatePayment, useCurrencies, useUsers } from '../../libs/api';
 import { FormikHelpers } from 'formik';
@@ -103,12 +95,12 @@ export const Payments = () => {
       helpers.resetForm();
       setReset(true);
       toast.saved(
-        `Payment of ${values.amount}${values.currency.symbol} sent to "${values.recipient.username}"`,
+        `Payment of ${values.amount}${values.currency.symbol} was sent to "${values.recipient.username}"`,
       );
     } catch (e) {
       if (e instanceof AxiosError) {
         helpers.setErrors({
-          error: e.response?.data?.message || "Une erreur s'est produite",
+          error: e.response?.data?.message || 'Une erreur s\'est produite',
         });
       }
       throw e;
@@ -117,7 +109,7 @@ export const Payments = () => {
 
   return (
     <div className={classes.globalContainer}>
-      <PageHeader text="Payments"></PageHeader>
+      <PageHeader text='Payments'></PageHeader>
       <div className={classes.container}>
         <Formix
           initialValues={initialValues}
@@ -125,20 +117,20 @@ export const Payments = () => {
           onSubmit={submit}
         >
           <SelectFormik
-            name="recipient"
+            name='recipient'
             options={userOptions}
-            label="Recipient"
+            label='Recipient'
             reset={reset}
           />
           <SelectFormik
-            name="currency"
+            name='currency'
             options={currencyOptions}
-            label="Currency"
+            label='Currency'
             reset={reset}
           />
-          <Input title="Amount" name="amount" type="number" reset={reset} />
+          <Input title='Amount' name='amount' type='number' reset={reset} />
           <FormixError />
-          <Button text="Send" type="submit" full />
+          <Button text='Send' type='submit' full />
         </Formix>
       </div>
     </div>

@@ -75,7 +75,7 @@ export const PaymentHistoryLine = ({ payment }: Props) => {
         currency.code
       }`}</p>
       <p className={classes.label}>{`${
-        me.id === payment.recipientId ? 'Me' : recipient.username
+        me.id === payment.recipientId ? sender.username : recipient.username
       }`}</p>
       <p className={classes.label}>
         {new Date(payment.createdAt).toLocaleDateString('fr-FR', {

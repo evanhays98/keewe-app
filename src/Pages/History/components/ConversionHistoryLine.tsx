@@ -31,6 +31,17 @@ const useStyles = createUseStyles<string, {}, any>((theme: Theme) => ({
     alignItems: 'flex-end',
     flexDirection: 'column',
   },
+  icon: {
+    height: 16,
+    width: 16,
+  },
+  inline: {
+    ...theme.fonts.label,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: theme.marginBase,
+  },
   label: {
     ...theme.fonts.label,
     whiteSpace: 'nowrap',
@@ -58,11 +69,19 @@ export const ConversionHistoryLine = ({ currencyConversion }: Props) => {
       <p className={classnames(classes.label)}>
         <Icons icon={Icon.exchange} color={ColorsString.midNightBlue} />
       </p>
-      <p className={classes.label}>{`${currencyConversion.amount.toFixed(2)} ${
-        fromCurrency.code
-      } -> ${(currencyConversion.amount * currencyConversion.rate).toFixed(
-        2,
-      )} ${toCurrency.code}`}</p>
+      <div className={classes.inline}>
+        <p>
+          {`${currencyConversion.amount.toFixed(2)} ${
+            fromCurrency.code
+          }`}
+        </p>
+        <Icons icon={Icon.send} color={ColorsString.midNightBlue} size={13} className={classes.icon} />
+        <p>
+          {`${(currencyConversion.amount * currencyConversion.rate).toFixed(
+            2,
+          )} ${toCurrency.code}`}
+        </p>
+      </div>
       <p className={classes.label}>
         {new Date(currencyConversion.createdAt).toLocaleDateString('fr-FR', {
           year: '2-digit',

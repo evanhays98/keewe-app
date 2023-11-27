@@ -4,12 +4,12 @@ const basicColors = {
   blueLightGradiant: `-webkit-linear-gradient(100deg, ${'#5a92a1'} 0%, ${'#57c2e0'} 100%)`,
   blue: '#22778e',
   black: '#1a1d1f',
-  red: '#e56472',
+  red: '#e05767',
   midNightBlue: '#0c1842',
   blueHover: '#08262e',
   lightGray: '#2d3134',
   transparent: '#FFFFFF00',
-  green: '#79d279',
+  green: '#7bde74',
   transparentDarkGray: 'rgba(30,39,51,0.8)',
 };
 
